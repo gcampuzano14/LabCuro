@@ -1,0 +1,129 @@
+index,lab_name,lab_service,instrument_id,accession_number,patient_name,matrix,panel,lab_tech,date_sent_to_pathology,training_pathologist,pathologist,date_reviewed_pathologist
+1,JMH,FLOW,intrument_111,M13-777,INADEQUATE,PB,LLL,gcampuzano ,2014-07-30 20:41:58,gcampuzano,gcampuzano,2014-08-03 18:54:40
+2,JMH,FLOW,intrument_111,M13-777,INADEQUATE,PB,LLL,gcampuzano ,2014-07-30 20:42:39,gcampuzano,gcampuzano,2014-08-03 18:54:40
+3,JMH,FLOW,intrument_111,W14111,TEST,BM,LY1,gcampuzano ,2014-07-30 20:53:21,gcampuzano,gcampuzano,2014-08-03 18:55:13
+4,JMH,FLOW,intrument_111,T1411,TEST,BM,LY1,gcampuzano ,2014-07-30 20:53:21,gcampuzano,gcampuzano,2014-08-03 18:55:11
+5,JMH,FLOW,intrument_111,M14111,TEST,BM,LY1,gcampuzano ,2014-07-30 20:53:21,gcampuzano,gcampuzano,2014-08-03 18:55:10
+6,JMH,FLOW,intrument_111,M14-222A,RAT,BM,LY1,gcampuzano ,2014-07-30 20:53:21,gcampuzano,gcampuzano,2014-08-03 18:54:57
+7,JMH,FLOW,intrument_111,M14-222,RAT,BM,LY1,gcampuzano ,2014-07-30 20:53:21,gcampuzano,gcampuzano,2014-08-03 18:54:55
+8,JMH,FLOW,intrument_111,M13-777,INADEQUATE,PB,LLL,gcampuzano ,2014-07-30 20:53:21,gcampuzano,gcampuzano,2014-08-03 18:54:40
+9,JMH,FLOW,intrument_111,M14-222B,RAT,BM,LY1,gcampuzano ,2014-07-30 20:53:21,gcampuzano,gcampuzano,2014-08-03 18:54:59
+10,JMH,FLOW,intrument_111,M14-111,TEST,BM,LY1,gcampuzano ,2014-07-30 20:53:21,gcampuzano,gcampuzano,2014-08-03 18:54:51
+11,JMH,FLOW,intrument_111,W14111,TEST,BM,LY1,gcampuzano ,2014-07-30 21:28:47,gcampuzano,gcampuzano,2014-08-03 18:55:13
+12,JMH,FLOW,intrument_111,T1411,TEST,BM,LY1,gcampuzano ,2014-07-30 21:28:47,gcampuzano,gcampuzano,2014-08-03 18:55:11
+13,JMH,FLOW,intrument_111,M14111,TEST,BM,LY1,gcampuzano ,2014-07-30 21:28:47,gcampuzano,gcampuzano,2014-08-03 18:55:10
+14,JMH,FLOW,intrument_111,M14-222A,RAT,BM,LY1,gcampuzano ,2014-07-30 21:28:47,gcampuzano,gcampuzano,2014-08-03 18:54:57
+15,JMH,FLOW,intrument_111,M14-222,RAT,BM,LY1,gcampuzano ,2014-07-30 21:28:47,gcampuzano,gcampuzano,2014-08-03 18:54:55
+16,JMH,FLOW,intrument_111,M13-777,INADEQUATE,PB,LLL,gcampuzano ,2014-07-30 21:28:47,gcampuzano,gcampuzano,2014-08-03 18:54:40
+17,JMH,FLOW,intrument_111,M14-222B,RAT,BM,LY1,gcampuzano ,2014-07-30 21:28:47,gcampuzano,gcampuzano,2014-08-03 18:54:59
+18,JMH,FLOW,intrument_111,M14-111,TEST,BM,LY1,gcampuzano ,2014-07-30 21:28:47,gcampuzano,gcampuzano,2014-08-03 18:54:51
+19,JMH,FLOW,intrument_111,M14-111,UN,FL,LY2,gcampuzano ,2014-07-30 21:28:47,gcampuzano,gcampuzano,2014-08-03 18:55:08
+20,JMH,FLOW,intrument_111,M13-777,UN,PB,LLL,gcampuzano ,2014-07-30 21:28:47,gcampuzano,gcampuzano,2014-07-30 21:38:15
+21,JMH,FLOW,intrument_111,M14-111,UN,BM,LY1,gcampuzano ,2014-07-30 21:28:47,gcampuzano,gcampuzano,2014-08-03 18:54:52
+22,JMH,FLOW,intrument_111,M13-777,INADEQUATE,TS,LLL,gcampuzano ,2014-07-30 21:32:32,gcampuzano,gcampuzano,2014-08-03 18:55:02
+23,JMH,FLOW,intrument_111,M13-77799,UN,TS,LLL,gcampuzano ,2014-07-30 21:32:32,gcampuzano,gcampuzano,2014-08-02 12:44:00
+24,JMH,FLOW,intrument_111,M13-777,INADEQUATE,PB,LLL,gcampuzano ,2014-07-30 21:32:32,gcampuzano,gcampuzano,2014-08-03 18:54:40
+25,test_lab,FLOW,intrument_111d,W14111,TEST,BM,LY1,gcampuzano ,2014-08-02 13:51:19,gcampuzano,gcampuzano,2014-08-03 18:55:13
+26,test_lab,FLOW,intrument_111d,T1411,TEST,BM,LY1,gcampuzano ,2014-08-02 13:51:19,gcampuzano,gcampuzano,2014-08-03 18:55:11
+27,test_lab,FLOW,intrument_111d,M14111,TEST,BM,LY1,gcampuzano ,2014-08-02 13:51:19,gcampuzano,gcampuzano,2014-08-03 18:55:10
+28,test_lab,FLOW,intrument_111d,M13-777,INADEQUATE,TS,LLL,gcampuzano ,2014-08-02 13:51:19,gcampuzano,gcampuzano,2014-08-03 18:55:02
+29,test_lab,FLOW,intrument_111d,M14-222A,RAT,BM,LY1,gcampuzano ,2014-08-02 13:51:19,gcampuzano,gcampuzano,2014-08-03 18:54:57
+30,test_lab,FLOW,intrument_111d,M14-222,RAT,BM,LY1,gcampuzano ,2014-08-02 13:51:19,gcampuzano,gcampuzano,2014-08-03 18:54:55
+31,test_lab,FLOW,intrument_111d,M14-222B,RAT,BM,LY1,gcampuzano ,2014-08-02 13:51:19,gcampuzano,gcampuzano,2014-08-03 18:54:59
+32,test_lab,FLOW,intrument_111d,M14-111,TEST,BM,LY1,gcampuzano ,2014-08-02 13:51:19,gcampuzano,gcampuzano,2014-08-03 18:54:51
+33,MyLab,MOLECULAR,jjjj,M13-777,INADEQUATE,PB,LLL,gcampuzano,2014-08-03 16:37:38,gcampuzano,gcampuzano,2014-08-03 18:54:40
+34,MyLab2,MOLECULAR,intrument_111,W14111,TEST,BM,LY1,gcampuzano,2014-08-03 17:37:36,gcampuzano,gcampuzano,2014-08-03 18:55:13
+35,MyLab2,MOLECULAR,intrument_111,T1411,TEST,BM,LY1,gcampuzano,2014-08-03 17:37:36,gcampuzano,gcampuzano,2014-08-03 18:55:11
+36,MyLab2,MOLECULAR,intrument_111,M14111,TEST,BM,LY1,gcampuzano,2014-08-03 17:37:36,gcampuzano,gcampuzano,2014-08-03 18:55:10
+37,MyLab2,MOLECULAR,intrument_111,M13-777,INADEQUATE,PB,LLL,gcampuzano,2014-08-03 17:37:36,gcampuzano,gcampuzano,2014-08-03 18:54:40
+38,MyLab2,MOLECULAR,intrument_111,M14-222B,RAT,BM,LY1,gcampuzano,2014-08-03 17:37:36,gcampuzano,gcampuzano,2014-08-03 18:54:59
+39,MyLab2,MOLECULAR,intrument_111,M13-777,INADEQUATE,TS,LLL,gcampuzano,2014-08-03 17:37:36,gcampuzano,gcampuzano,2014-08-03 18:55:02
+40,MyLab2,MOLECULAR,intrument_111,M14-111,TEST,BM,LY1,gcampuzano,2014-08-03 17:37:36,gcampuzano,gcampuzano,2014-08-03 18:54:51
+41,MyLab2,MOLECULAR,intrument_111,M14-222,RAT,BM,LY1,gcampuzano,2014-08-03 17:37:36,gcampuzano,gcampuzano,2014-08-03 18:54:55
+42,MyLab2,MOLECULAR,intrument_111,M14-222A,RAT,BM,LY1,gcampuzano,2014-08-03 17:37:36,gcampuzano,gcampuzano,2014-08-03 18:54:57
+43,MyLab2,MOLECULAR,intrument_111,M13-777,UN,BM,LLL,gcampuzano,2014-08-03 17:43:42,gcampuzano,gcampuzano,2014-08-03 18:54:46
+44,MyLab2,MOLECULAR,intrument_111,M13-777,UN,FL,LLL,gcampuzano,2014-08-03 17:43:42,gcampuzano,gcampuzano,2014-08-03 18:55:05
+45,MyLab2,MOLECULAR,intrument_111,M14-111,UN,FL,LY2,gcampuzano,2014-08-03 17:43:42,gcampuzano,gcampuzano,2014-08-03 18:55:08
+46,MyLab2,MOLECULAR,intrument_111,M13-777,IWASHERE,PB,LLL,gcampuzano,2014-08-03 17:43:42,gcampuzano,gcampuzano,2014-08-03 18:54:41
+47,MyLab2,MOLECULAR,intrument_111,M14-111,CORRECTNAME,PB,LY3,gcampuzano,2014-08-03 17:43:42,gcampuzano,gcampuzano,2014-08-03 18:54:48
+48,MyLab2,MOLECULAR,intrument_111,M13-777,UN,TS,LLL,gcampuzano,2014-08-03 17:43:42,gcampuzano,gcampuzano,2014-08-03 18:55:07
+49,MyLab2,MOLECULAR,intrument_111,M14-111,UN,BM,LY1,gcampuzano,2014-08-03 17:43:42,gcampuzano,gcampuzano,2014-08-03 18:54:52
+50,MyLab2,MOLECULAR,intrument_111,M13-777,NEWNAME,PB,LLL,gcampuzano,2014-08-03 17:54:38,gcampuzano,gcampuzano,2014-08-03 18:54:43
+51,MyLab2,MOLECULAR,intrument_111,M13-777,UN,FL,LLL,gcampuzano,2014-08-03 17:54:38,gcampuzano,gcampuzano,2014-08-03 18:55:05
+52,MyLab2,MOLECULAR,intrument_111,M14-111,UN,FL,LY2,gcampuzano,2014-08-03 17:54:38,gcampuzano,gcampuzano,2014-08-03 18:55:08
+53,MyLab2,MOLECULAR,intrument_111,M13-777,TESTING,PB,LLL,gcampuzano,2014-08-03 17:54:38,gcampuzano,gcampuzano,2014-08-03 18:54:44
+54,MyLab2,MOLECULAR,intrument_111,M13-777,DDD,TS,LLL,gcampuzano,2014-08-03 17:54:38,gcampuzano,gcampuzano,2014-08-03 18:55:01
+55,MyLab2,MOLECULAR,intrument_111,M14-111,OTHERNAME,PB,LY3,gcampuzano,2014-08-03 17:54:38,gcampuzano,gcampuzano,2014-08-03 18:54:49
+56,MyLab2,MOLECULAR,intrument_111,M14-111,UN,BM,LY1,gcampuzano,2014-08-03 17:54:38,gcampuzano,gcampuzano,2014-08-03 18:54:52
+57,MyLab2,MOLECULAR,intrument_111,W14111,TEST,BM,LY1,gcampuzano,2014-08-03 18:06:20,gcampuzano,gcampuzano,2014-08-03 18:55:13
+58,MyLab2,MOLECULAR,intrument_111,T1411,TEST,BM,LY1,gcampuzano,2014-08-03 18:06:20,gcampuzano,gcampuzano,2014-08-03 18:55:11
+59,MyLab2,MOLECULAR,intrument_111,M14111,TEST,BM,LY1,gcampuzano,2014-08-03 18:06:20,gcampuzano,gcampuzano,2014-08-03 18:55:10
+60,MyLab2,MOLECULAR,intrument_111,M13-777,UN,BM,LLL,gcampuzano,2014-08-03 18:06:20,gcampuzano,gcampuzano,2014-08-03 18:54:46
+61,MyLab2,MOLECULAR,intrument_111,M14-222,RAT,BM,LY1,gcampuzano,2014-08-03 18:06:20,gcampuzano,gcampuzano,2014-08-03 18:54:55
+62,MyLab2,MOLECULAR,intrument_111,M13-777,FINALSPACE,PB,LLL,gcampuzano,2014-08-03 18:06:20,gcampuzano,gcampuzano,2014-08-03 18:54:38
+63,MyLab2,MOLECULAR,intrument_111,M13-777,UN,FL,LLL,gcampuzano,2014-08-03 18:06:20,gcampuzano,gcampuzano,2014-08-03 18:55:05
+64,MyLab2,MOLECULAR,intrument_111,M14-111,UN,FL,LY2,gcampuzano,2014-08-03 18:06:20,gcampuzano,gcampuzano,2014-08-03 18:55:08
+65,MyLab2,MOLECULAR,intrument_111,M13-777,IWASHERE,PB,LLL,gcampuzano,2014-08-03 18:06:20,gcampuzano,gcampuzano,2014-08-03 18:54:41
+66,MyLab2,MOLECULAR,intrument_111,M13-777,INADEQUATE,PB,LLL,gcampuzano,2014-08-03 18:06:20,gcampuzano,gcampuzano,2014-08-03 18:54:40
+67,MyLab2,MOLECULAR,intrument_111,M13-777,DDD,TS,LLL,gcampuzano,2014-08-03 18:06:20,gcampuzano,gcampuzano,2014-08-03 18:55:01
+68,MyLab2,MOLECULAR,intrument_111,M14-111,CORRECTNAME,PB,LY3,gcampuzano,2014-08-03 18:06:20,gcampuzano,gcampuzano,2014-08-03 18:54:48
+69,MyLab2,MOLECULAR,intrument_111,M13-777,NEWNAME,PB,LLL,gcampuzano,2014-08-03 18:06:20,gcampuzano,gcampuzano,2014-08-03 18:54:43
+70,MyLab2,MOLECULAR,intrument_111,M14-111,OTHERNAME,PB,LY3,gcampuzano,2014-08-03 18:06:20,gcampuzano,gcampuzano,2014-08-03 18:54:49
+71,MyLab2,MOLECULAR,intrument_111,M14-222B,RAT,BM,LY1,gcampuzano,2014-08-03 18:06:20,gcampuzano,gcampuzano,2014-08-03 18:54:59
+72,MyLab2,MOLECULAR,intrument_111,M13-777,UN,TS,LLL,gcampuzano,2014-08-03 18:06:20,gcampuzano,gcampuzano,2014-08-03 18:55:07
+73,MyLab2,MOLECULAR,intrument_111,M13-777,NOSPACE,TS,LLL,gcampuzano,2014-08-03 18:06:20,gcampuzano,gcampuzano,2014-08-03 18:55:04
+74,MyLab2,MOLECULAR,intrument_111,M13-777,INADEQUATE,TS,LLL,gcampuzano,2014-08-03 18:06:20,gcampuzano,gcampuzano,2014-08-03 18:55:02
+75,MyLab2,MOLECULAR,intrument_111,M14-222A,RAT,BM,LY1,gcampuzano,2014-08-03 18:06:20,gcampuzano,gcampuzano,2014-08-03 18:54:57
+76,MyLab2,MOLECULAR,intrument_111,M14-111,UN,BM,LY1,gcampuzano,2014-08-03 18:06:20,gcampuzano,gcampuzano,2014-08-03 18:54:52
+77,MyLab2,MOLECULAR,intrument_111,M14-111,TEST,BM,LY1,gcampuzano,2014-08-03 18:06:20,gcampuzano,gcampuzano,2014-08-03 18:54:51
+78,MyLab6,MOLECULAR,intrument_111,M13-777,NEWNAME,PB,LLL,gcampuzano,2014-08-03 18:23:31,gcampuzano,gcampuzano,2014-08-03 18:54:43
+79,MyLab6,MOLECULAR,intrument_111,M14-222,RAT,BM,LY1,gcampuzano,2014-08-03 18:23:31,gcampuzano,gcampuzano,2014-08-03 18:54:55
+80,MyLab6,MOLECULAR,intrument_111,M13-777,INADEQUATE,PB,LLL,gcampuzano,2014-08-03 18:23:31,gcampuzano,gcampuzano,2014-08-03 18:54:40
+81,MyLab6,MOLECULAR,intrument_111,M13-777,UN,TS,LLL,gcampuzano,2014-08-03 18:23:31,gcampuzano,gcampuzano,2014-08-03 18:55:07
+82,MyLab6,MOLECULAR,intrument_111,M13-777,IWASHERE,PB,LLL,gcampuzano,2014-08-03 18:23:31,gcampuzano,gcampuzano,2014-08-03 18:54:41
+83,MyLab6,MOLECULAR,intrument_111,M13-777,FINALSPACE,PB,LLL,gcampuzano,2014-08-03 18:23:31,gcampuzano,gcampuzano,2014-08-03 18:54:38
+84,MyLab6,MOLECULAR,intrument_111,M13-777,TESTING,PB,LLL,gcampuzano,2014-08-03 18:23:31,gcampuzano,gcampuzano,2014-08-03 18:54:44
+85,MyLab6,MOLECULAR,intrument_111,M13-777,NOSPACE,TS,LLL,gcampuzano,2014-08-03 18:23:31,gcampuzano,gcampuzano,2014-08-03 18:55:04
+86,MyLab6,MOLECULAR,intrument_111,M13-777,INADEQUATE,TS,LLL,gcampuzano,2014-08-03 18:23:31,gcampuzano,gcampuzano,2014-08-03 18:55:02
+87,MyLab6,MOLECULAR,intrument_111,M14-222B,RAT,BM,LY1,gcampuzano,2014-08-03 18:23:31,gcampuzano,gcampuzano,2014-08-03 18:54:59
+88,MyLab6,MOLECULAR,intrument_111,M13-777,UN,FL,LLL,gcampuzano,2014-08-03 18:23:31,gcampuzano,gcampuzano,2014-08-03 18:55:05
+89,MyLab6,MOLECULAR,intrument_111,M14-111,UN,BM,LY1,gcampuzano,2014-08-03 18:23:31,gcampuzano,gcampuzano,2014-08-03 18:54:52
+90,MyLab6,MOLECULAR,intrument_111,M13-777,DDD,TS,LLL,gcampuzano,2014-08-03 18:23:31,gcampuzano,gcampuzano,2014-08-03 18:55:01
+91,MyLab6,MOLECULAR,intrument_111,M14-222A,RAT,BM,LY1,gcampuzano,2014-08-03 18:23:31,gcampuzano,gcampuzano,2014-08-03 18:54:57
+92,MyLab6,MOLECULAR,intrument_111,M13-777,NEWNAME,PB,LLL,gcampuzano,2014-08-03 18:23:31,gcampuzano,gcampuzano,2014-08-03 18:54:43
+93,MyLab6,MOLECULAR,intrument_111,M13-777,UN,BM,LLL,gcampuzano,2014-08-03 18:23:31,gcampuzano,gcampuzano,2014-08-03 18:54:46
+94,MyLab6,MOLECULAR,intrument_111,M14-111,UN,FL,LY2,gcampuzano,2014-08-03 18:23:31,gcampuzano,gcampuzano,2014-08-03 18:55:08
+95,MyLab6,MOLECULAR,intrument_111,M14-111,OTHERNAME,PB,LY3,gcampuzano,2014-08-03 18:23:31,gcampuzano,gcampuzano,2014-08-03 18:54:49
+96,MyLab6,MOLECULAR,intrument_111,M14-111,TEST,BM,LY1,gcampuzano,2014-08-03 18:23:31,gcampuzano,gcampuzano,2014-08-03 18:54:51
+97,MyLab6,MOLECULAR,intrument_111,M14-111,CORRECTNAME,PB,LY3,gcampuzano,2014-08-03 18:23:31,gcampuzano,gcampuzano,2014-08-03 18:54:48
+98,MyLab6,MOLECULAR,intrument_111,M14111,TEST,BM,LY1,gcampuzano,2014-08-03 18:23:31,gcampuzano,gcampuzano,2014-08-03 18:55:10
+99,MyLab6,MOLECULAR,intrument_111,T1411,TEST,BM,LY1,gcampuzano,2014-08-03 18:23:31,gcampuzano,gcampuzano,2014-08-03 18:55:11
+100,MyLab6,MOLECULAR,intrument_111,W14111,TEST,BM,LY1,gcampuzano,2014-08-03 18:23:31,gcampuzano,gcampuzano,2014-08-03 18:55:13
+101,MyLab9,MOLECULAR,intrument_111,W14111,TEST,BM,LY1,gcampuzano,2014-08-03 18:32:07,gcampuzano,gcampuzano,2014-08-03 18:55:13
+102,MyLab9,MOLECULAR,intrument_111,T1411,TEST,BM,LY1,gcampuzano,2014-08-03 18:32:07,gcampuzano,gcampuzano,2014-08-03 18:55:11
+103,MyLab9,MOLECULAR,intrument_111,M14111,TEST,BM,LY1,gcampuzano,2014-08-03 18:32:07,gcampuzano,gcampuzano,2014-08-03 18:55:10
+104,MyLab29,MOLECULAR,intrument_111,T1411,TEST,BM,LY1,gcampuzano,2014-08-03 18:39:42,gcampuzano,gcampuzano,2014-08-03 18:55:11
+105,MyLab29,MOLECULAR,intrument_111,M14111,TEST,BM,LY1,gcampuzano,2014-08-03 18:39:42,gcampuzano,gcampuzano,2014-08-03 18:55:10
+106,MyLab29,MOLECULAR,intrument_111,W14111,TEST,BM,LY1,gcampuzano,2014-08-03 18:39:42,gcampuzano,gcampuzano,2014-08-03 18:55:13
+107,MyLab28,MOLECULAR,intrument_111,M13-777,UN,BM,LLL,gcampuzano,2014-08-03 18:52:37,gcampuzano,gcampuzano,2014-08-03 18:54:46
+108,MyLab28,MOLECULAR,intrument_111,M14-111,UN,FL,LY2,gcampuzano,2014-08-03 18:52:37,gcampuzano,gcampuzano,2014-08-03 18:55:08
+109,MyLab28,MOLECULAR,intrument_111,M13-777,TESTING,PB,LLL,gcampuzano,2014-08-03 18:52:37,gcampuzano,gcampuzano,2014-08-03 18:54:44
+110,MyLab28,MOLECULAR,intrument_111,M13-777,NOSPACE,TS,LLL,gcampuzano,2014-08-03 18:52:37,gcampuzano,gcampuzano,2014-08-03 18:55:04
+111,MyLab28,MOLECULAR,intrument_111,M13-777,FINALSPACE,PB,LLL,gcampuzano,2014-08-03 18:52:37,gcampuzano,gcampuzano,2014-08-03 18:54:38
+112,MyLab28,MOLECULAR,intrument_111,M13-777,UN,FL,LLL,gcampuzano,2014-08-03 18:52:37,gcampuzano,gcampuzano,2014-08-03 18:55:05
+113,MyLab28,MOLECULAR,intrument_111,M14-222A,RAT,BM,LY1,gcampuzano,2014-08-03 18:52:37,gcampuzano,gcampuzano,2014-08-03 18:54:57
+114,MyLab28,MOLECULAR,intrument_111,M13-777,INADEQUATE,PB,LLL,gcampuzano,2014-08-03 18:52:37,gcampuzano,gcampuzano,2014-08-03 18:54:40
+115,MyLab28,MOLECULAR,intrument_111,M13-777,IWASHERE,PB,LLL,gcampuzano,2014-08-03 18:52:37,gcampuzano,gcampuzano,2014-08-03 18:54:41
+116,MyLab28,MOLECULAR,intrument_111,M14-111,CORRECTNAME,PB,LY3,gcampuzano,2014-08-03 18:52:37,gcampuzano,gcampuzano,2014-08-03 18:54:48
+117,MyLab28,MOLECULAR,intrument_111,M13-777,UN,TS,LLL,gcampuzano,2014-08-03 18:52:37,gcampuzano,gcampuzano,2014-08-03 18:55:07
+118,MyLab28,MOLECULAR,intrument_111,M13-777,NEWNAME,PB,LLL,gcampuzano,2014-08-03 18:52:37,gcampuzano,gcampuzano,2014-08-03 18:54:43
+119,MyLab28,MOLECULAR,intrument_111,M14-222B,RAT,BM,LY1,gcampuzano,2014-08-03 18:52:37,gcampuzano,gcampuzano,2014-08-03 18:54:59
+120,MyLab28,MOLECULAR,intrument_111,M14-111,OTHERNAME,PB,LY3,gcampuzano,2014-08-03 18:52:37,gcampuzano,gcampuzano,2014-08-03 18:54:49
+121,MyLab28,MOLECULAR,intrument_111,M14-222,RAT,BM,LY1,gcampuzano,2014-08-03 18:52:37,gcampuzano,gcampuzano,2014-08-03 18:54:55
+122,MyLab28,MOLECULAR,intrument_111,M13-777,INADEQUATE,TS,LLL,gcampuzano,2014-08-03 18:52:37,gcampuzano,gcampuzano,2014-08-03 18:55:02
+123,MyLab28,MOLECULAR,intrument_111,M13-777,DDD,TS,LLL,gcampuzano,2014-08-03 18:52:37,gcampuzano,gcampuzano,2014-08-03 18:55:01
+124,MyLab28,MOLECULAR,intrument_111,M14-111,UN,BM,LY1,gcampuzano,2014-08-03 18:52:37,gcampuzano,gcampuzano,2014-08-03 18:54:52
+125,MyLab28,MOLECULAR,intrument_111,M14-111,TEST,BM,LY1,gcampuzano,2014-08-03 18:52:37,gcampuzano,gcampuzano,2014-08-03 18:54:51
+126,MyLab28,MOLECULAR,intrument_111,W14111,TEST,BM,LY1,gcampuzano,2014-08-03 18:52:37,gcampuzano,gcampuzano,2014-08-03 18:55:13
+127,MyLab28,MOLECULAR,intrument_111,T1411,TEST,BM,LY1,gcampuzano,2014-08-03 18:52:37,gcampuzano,gcampuzano,2014-08-03 18:55:11
+128,MyLab28,MOLECULAR,intrument_111,M14111,TEST,BM,LY1,gcampuzano,2014-08-03 18:52:37,gcampuzano,gcampuzano,2014-08-03 18:55:10

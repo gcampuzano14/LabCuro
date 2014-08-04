@@ -1,0 +1,77 @@
+imports here
+
+main module/class:
+	if "local_settings.json" doesnt exist in current folder
+		run setup_labcuro module
+			setup_labcuro module:
+				run local_settings module
+					create local_settings.json in program folder
+				
+				select instrument ID, write to local_settings.json
+				select service (flow, molecular, ect), write to local_settings.json
+				select local paths to backup, write to local_settings.json
+				select local paths for clinical and raw data for clinical work, write to local_settings.json
+				
+	
+	read local_settings.json into a variable = 'local_settings'
+	
+	vbu, vpdf, vrca, timestamp = F1(local_settings)
+	
+	connect (map) to netdrive
+	
+	vbu files/folders backed up in netdrive and cut tail = F2(vbu)
+	
+	vpdf and vrca files sentin netdrive = F3(vpdf, vrca)
+	
+	F4(timestamp, F2(vbu), F3(vpdf, vrca))
+	
+	disconnect form netdrive
+	
+	exit program (display log?)
+	
+	
+	
+F1 (local_settings) function/module to designate file path str varibles from 'local_settings' and inital variables
+	list of variables paths 
+		designate path attributes: 
+			path
+			type (for back up | for back up and clinical)
+			suptype (raw | pdf) (only for clinical)
+			time to cut tail (local drive for all, net drive for clinical)
+		
+			
+		
+	list of variables clinical pdf/images and time to cut tail (netdrive) = vpdf
+	list of variables for raw clinical analysis and time to cut tail (netdrive) = vrca
+	obtain current time and set as a variable (serial date YYYYMMDDHHMMSS) = timestamp
+	capture user ID = user_ID
+	return vbu, vpdf, vrca, timestamp
+	
+	
+F2 (vbu) function to backup folders
+	backup folder contents to netdrive
+	sent items to new location in local drine ("SENT_LC" folder within backed up folder)
+	cut tail of items in "SENT_LC" - time to cut tail obtained from local_settings
+	return vbu files/folders backed up in netdrive and those cut at the tail
+
+F3 function to send clinical pdf and raw data (vpdf, vrca)
+	check that file names are in allowed format (proposed: accessnumpartype_lastname_matrix_panel_tiemstamp.*)
+	
+	
+	return vpdf and vrca files sent in netdrive
+		
+	
+F4 (timestamp, F2(vbu), F3(vpdf, vrca), instrument_id, service_ID, user_ID) log of process with user ID and timestamp
+	log instrument_id, service_ID, user_ID, timestamp
+	log vbu files/folders backed up in netdrive (F2(vbu)) 
+	log vpdf and vrca files sentin netdrive F3(vpdf, vrca)
+		
+		
+		
+		
+	 
+		
+				
+				
+				
+				 

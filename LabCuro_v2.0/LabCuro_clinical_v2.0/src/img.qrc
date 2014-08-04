@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="/" >
+	<file>bin/images/bm.png</file>
+	<file>bin/images/flow.png</file>
+	<file>bin/images/freedom.png</file>
+	<file>bin/images/labcuro_chromatogram.png</file>
+	<file>bin/images/labcuro_full.png</file>
+	<file>bin/images/molec.png</file>
+	<file>bin/images/tissue.png</file>
+	<file>bin/images/lab_access.png</file>
+  </qresource>
+</RCC>
+

@@ -1,0 +1,13 @@
+1. Create the .spec file with the following command:
+
+
+
+python D:\Dropbox\Programming\Python\APPS\pyinstaller-2.0\utils\Makespec.py --icon="D:\Dropbox\Programming\Python\PY_APPS_COLLABORATIVE\LabCuro\LabCuro_v2.0\LabCuro_lab_v2.0\src\bin\images\labcuro_chromatogram.ico" --name="LabCuro Laboratory Suite v2.0" D:\Dropbox\Programming\Python\PY_APPS_COLLABORATIVE\LabCuro\LabCuro_v2.0\LabCuro_lab_v2.0\src\LabCuro_lab_v2.0.py
+
+
+Run  command in compile forlder
+
+
+2.  Build
+
+python D:\Dropbox\Programming\Python\APPS\pyinstaller-2.0\utils\Build.py "LabCuro Laboratory Suite v2.0.spec"

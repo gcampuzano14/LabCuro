@@ -1,0 +1,10 @@
+('C:\\Users\\germancz\\Dropbox\\Programming\\Python\\APPS\\pyinstaller\\FlowCuro_Lab\\dist\\FlowCuro_Lab.exe',
+ True,
+ False,
+ None,
+ None,
+ [],
+ None,
+ True,
+ 0,
+ 1378759335L)

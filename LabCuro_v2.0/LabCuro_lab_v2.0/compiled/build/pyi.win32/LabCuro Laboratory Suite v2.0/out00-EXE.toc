@@ -1,0 +1,10 @@
+('D:\\Dropbox\\Programming\\Python\\PY_APPS_COLLABORATIVE\\LabCuro\\LabCuro_v2.0\\LabCuro_lab_v2.0\\compiled\\build\\pyi.win32\\LabCuro Laboratory Suite v2.0\\LabCuro Laboratory Suite v2.0.exe',
+ True,
+ False,
+ 'D:\\Dropbox\\Programming\\Python\\PY_APPS_COLLABORATIVE\\LabCuro\\LabCuro_v2.0\\LabCuro_lab_v2.0\\src\\bin\\images\\labcuro_chromatogram.ico',
+ None,
+ [],
+ None,
+ True,
+ 0,
+ 1407106013L)
