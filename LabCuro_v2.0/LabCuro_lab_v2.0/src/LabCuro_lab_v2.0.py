@@ -312,7 +312,7 @@ class file_process:
                                     else:
                                         os.rename(os.path.join(true_clinical_path, file_unsorted), os.path.join(true_clinical_path, processed_file))
                                     os.startfile(os.path.join(true_clinical_path, processed_file))
-                                  
+                                 
                     if clinical_paths[clinical_path]['add_to_clin_database']:             
                         for filename in files_to_log:
                             accession_number = files_to_log[filename]['accession_number']
@@ -327,7 +327,8 @@ class file_process:
                                      'patient_name':str(patient_name), 'matrix':str(matrix),'panel':str(panel), 'lab_tech':str(username), 'date_sent_to_pathology' : str(now_str)}
                             #print dicts
                             database_handler.insert_data(insert_vals, dicts, db_clin_name)
-        
+                        os.startfile(true_clinical_path)
+                    
             deleted_items_local[path['name_backup_path']] = []
             for file_name  in os.listdir(local_temp_destination):
                 #local_done = os.path.join(local_temp_destination,file_name)
