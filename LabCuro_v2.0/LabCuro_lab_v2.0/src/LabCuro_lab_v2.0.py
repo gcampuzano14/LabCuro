@@ -174,7 +174,7 @@ def main():
     elif intro == 'Help':
         new = 2 # open in a new tab, if possible
         # open a public URL, in this case, the webbrowser docs
-        url = "https://github.com/gcampuzano14/LabCuro/tree/master/LabCuro_clinical/manuals/LabCuro User Manual.pdf"
+        url = "https://github.com/gcampuzano14/LabCuro/tree/master/LabCuro_v2.0/manuals"
         webbrowser.open(url,new=new)
     
     #RUN MAIN FILE PROCESS FUNCTION
