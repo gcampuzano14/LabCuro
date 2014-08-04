@@ -19,6 +19,7 @@ import multi_inputbox
 import pdf_merger
 import admin_settings
 import database_handler
+import webbrowser
 from easygui_labcuro import msgbox, buttonbox, ccbox, choicebox
 
 
@@ -101,9 +102,9 @@ def main():
     #image = os.path.join(icon_dir,'labcuro_sim.gif')
     image = 'bin\\images\\labcuro_sim.gif'
     if username.lower().strip() in masteruser_list:
-        btnchoices = ["Run file transfer", 'Add new path', 'Utilization data dump', 'About', 'Quit']
+        btnchoices = ["Run file transfer", 'Add new path', 'Utilization data dump', 'About', 'Help', 'Quit']
     else:
-        btnchoices = ["Run file transfer", 'About', 'Quit']
+        btnchoices = ["Run file transfer", 'About', 'Help', 'Quit']
     intro = buttonbox(image=image, title=title, choices=btnchoices)
     if intro == "Quit":
         #quit()
@@ -170,6 +171,12 @@ def main():
             msgbox(image=image, title='About LabCuro v2.0', msg = msg_about)
             sys.exit(0)
             #quit()
+    elif intro == 'Help':
+        new = 2 # open in a new tab, if possible
+        # open a public URL, in this case, the webbrowser docs
+        url = "https://github.com/gcampuzano14/LabCuro/tree/master/LabCuro_clinical/manuals/LabCuro User Manual.pdf"
+        webbrowser.open(url,new=new)
+    
     #RUN MAIN FILE PROCESS FUNCTION
     fp = file_process()
     fp.path_cycle(local_settings, lab_service, username, networkdriveletter, db_clin_name, db_tech_name, place)
