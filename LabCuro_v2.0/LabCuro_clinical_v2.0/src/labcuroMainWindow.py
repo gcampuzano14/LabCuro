@@ -281,9 +281,10 @@ class Ui_MainWindow(object):
         self.raw_openbtn.setObjectName("raw_openbtn")
         self.raw_openbtn.setText('Raw files')
         #action
-        self.raw_openbtn.clicked.connect(lambda: self.openfolder(''.join(['RAW', re.match('.+\\\\PROCESSED(\\\\.+)\\\\.+\.\D{3}$', 
-                                                                                     str(chosenfile), re.IGNORECASE).group(1)])))    
-        
+        #self.raw_openbtn.clicked.connect(lambda: self.openfolder(''.join(['RAW', re.match('.+\\\\PROCESSED(\\\\.+)\\\\.+\.\D{3}$', 
+         #                                                                            str(chosenfile), re.IGNORECASE).group(1)])))    
+        self.raw_openbtn.clicked.connect(lambda: self.openfolder('RAW'))    
+         
         #Slide BUTTON panel over x_______________
         x_one = x_one + x_two
         x_two = x_two + 200

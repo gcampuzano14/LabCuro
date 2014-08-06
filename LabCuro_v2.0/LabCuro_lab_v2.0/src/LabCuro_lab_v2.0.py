@@ -20,6 +20,8 @@ import pdf_merger
 import admin_settings
 import database_handler
 import webbrowser
+import sys
+import distutils
 from easygui_labcuro import msgbox, buttonbox, ccbox, choicebox
 
 
@@ -34,6 +36,7 @@ from easygui_labcuro import msgbox, buttonbox, ccbox, choicebox
 
 def main():
     print os.path.dirname(__file__)
+    
     
     place = ''
     inst = install_labcuro.install_labcuro()
@@ -84,6 +87,7 @@ def main():
     domain = local_settings['lab_attributes']['service']['directories']['destination_server']['domain']
     username = netdrive_access[0]
     password = netdrive_access[1]
+    map_network_drive.mapped_drives(netdrive)
     networkdriveletter = map_network_drive.map_netdrive(netdrive, domain, username, password) + ':'
     #print netdrive
     map_network_drive.mapped_drives(netdrive)
@@ -413,7 +417,16 @@ class file_process:
         return {'no_match' : no_match, 'yes_match' : yes_match, 'bkp_file' : bkp_file, 'count' : cnt}
          
     def match(self, networkdriveletter, file_name, file_origin, clinical_paths):
+        chksum = useful_fx.checksums()
+        year = now.year
+        month = now.month
+        day = now.day
+        hour = now.hour
+        minute = now.minute
+        second = now.second
+        time_stamp = useful_fx.date_serial(year, month, day, hour, minute, second)
         for clinical_path in clinical_paths:
+            #print clinical_path
             if clinical_paths[clinical_path]['to_merge']: 
                 to_merge = '{{{_FILE_TO_MERGE_}}}' + file_name
                 destination_file = os.path.join(networkdriveletter, 'LABS', clinical_path, to_merge)
@@ -428,7 +441,16 @@ class file_process:
             matches = re.match(file_regex_pattern, file_name, re.IGNORECASE)
             if matches: # any file matched
                 #print newfile_name, destination_file
-                shutil.copy2(file_origin, destination_file)
+                if os.path.isdir(file_origin):
+                    if os.path.exists(destination_file):
+                        destination_file = destination_file + "_COPY_" + time_stamp  
+                    shutil.copytree(file_origin, destination_file, symlinks=False, ignore=None)
+                    
+                else:
+                    if os.path.exists(destination_file):
+                        extension = '.' + file_origin[-3:]
+                        destination_file = destination_file[:-4] + "_COPY_" + time_stamp + extension
+                    shutil.copy2(file_origin, destination_file)                
                 return True
         return False
 

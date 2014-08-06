@@ -141,7 +141,7 @@ class install_labcuro:
             local_sentdir = str(os.path.join(os.path.dirname(sys.executable), str('LABCURO_SENT' + place), test_category))
             
         elif __file__:
-            print 'frozen'
+            #print 'frozen'
             print os.path.join(os.path.dirname(__file__), str('LABCURO_SENT' + place), test_category)
             #os.system("pause")
            
@@ -175,41 +175,49 @@ class install_labcuro:
             clin_file_type = buttonbox(msg=msg, title=title, choices=btnchoices)
             clinical_paths = {}
             
-            sites = ["COPATH", "SUNQUEST", "QC", "RESEARCH"]
-            choice_site = multchoicebox(msg, title, sites)
-            for name_dir in choice_site:
-                print name_dir
-                sent_path = os.path.join(labname, test_category, type_file, clin_file_type, name_dir)
+            if clin_file_type == 'PROCESSED':
+                sites = ["COPATH", "SUNQUEST", "QC", "RESEARCH"]
+                choice_site = multchoicebox(msg, title, sites)
+                for name_dir in choice_site:
+                    print name_dir
+                    sent_path = os.path.join(labname, test_category, type_file, clin_file_type, name_dir)
+                    curr_sent_path = os.path.join(labs_path, sent_path)
+                    if not os.path.isdir(curr_sent_path):
+                        os.makedirs(curr_sent_path)
+                    filename_regex = admin_config['file_types'][name_dir]['in_processed_folder']
+                    #CLINICAL FILE ADDED TO CLINICAL CASE DATABASE
+                    file_clinicaldb = admin_config['file_types'][name_dir]['add_to_clin_database']
+                    clinical_paths[sent_path] = {}
+                    clinical_paths[sent_path]['find_folder'] = filename_regex
+                    print sent_path
+                    if file_clinicaldb:
+                        clinical_paths[sent_path]['add_to_clin_database'] =  admin_config["file_types"][name_dir]['add_to_clin_database']
+                    else:
+                        clinical_paths[sent_path]['add_to_clin_database'] = None
+                    if admin_config['file_types'][name_dir]["add_to_clin_database"]:
+                        #CLINICAL PDF FILE MERGING REQUIRED
+                        msg =   ('Clinical case type: ' + name_dir + '\nDo cases (PDF files) require merging by accession number and name')
+                        btnchoices = ['YES', 'NO']
+                        pdf_merge = buttonbox(msg=msg, title=title, choices=btnchoices)
+                        merger_regex = admin_config['file_types'][name_dir]['to_merge']
+                        if pdf_merge == 'YES':
+                            clinical_paths[sent_path]['to_merge'] =  merger_regex 
+                        else:
+                            clinical_paths[sent_path]['to_merge'] = None 
+                    else:
+                        clinical_paths[sent_path]['to_merge'] = None    
+            elif clin_file_type == 'RAW':
+                sent_path = os.path.join(labname, test_category, type_file, clin_file_type)
                 curr_sent_path = os.path.join(labs_path, sent_path)
                 if not os.path.isdir(curr_sent_path):
                     os.makedirs(curr_sent_path)
-                #   os.makedirs(os.path.join(curr_sent_path, 'DONE'))
-                
-                if clin_file_type == 'PROCESSED':
-                    filename_regex = admin_config['file_types'][name_dir]['in_processed_folder']
-                else:
-                    filename_regex = admin_config['file_types'][name_dir]['in_raw_folder']
+                #filename_regex = admin_config['file_types'][name_dir]['in_raw_folder']
+                filename_regex = '.'
                 clinical_paths[sent_path] = {}
                 clinical_paths[sent_path]['find_folder'] = filename_regex
-                
-                #CLINICAL FILE ADDED TO CLINICAL CASE DATABASE
-                file_clinicaldb = admin_config['file_types'][name_dir]['add_to_clin_database']
-                if file_clinicaldb and clin_file_type == 'PROCESSED':
-                    clinical_paths[sent_path]['add_to_clin_database'] =  admin_config["file_types"][name_dir]['add_to_clin_database']
-                else:
-                    clinical_paths[sent_path]['add_to_clin_database'] = None 
-                if clin_file_type == 'PROCESSED' and  admin_config['file_types'][name_dir]["add_to_clin_database"]:
-                    #CLINICAL PDF FILE MERGING REQUIRED
-                    msg =   ('Clinical case type: ' + name_dir + '\nDo cases (PDF files) require merging by accesion number and name')
-                    btnchoices = ['YES', 'NO']
-                    pdf_merge = buttonbox(msg=msg, title=title, choices=btnchoices)
-                    merger_regex = admin_config['file_types'][name_dir]['to_merge']
-                    if pdf_merge == 'YES':
-                        clinical_paths[sent_path]['to_merge'] =  merger_regex 
-                    else:
-                        clinical_paths[sent_path]['to_merge'] = None 
-                else:
-                    clinical_paths[sent_path]['to_merge'] = None                                 
+                clinical_paths[sent_path]['add_to_clin_database'] = None 
+                clinical_paths[sent_path]['to_merge'] = None
+                                             
         else:   
             clinical_paths = None
             clin_file_type = None
@@ -258,7 +266,7 @@ class install_labcuro:
             fieldNames  = ['Name of network drive folder where files will be backed up',
                            'Days to delete local files after transfer',
                            'Hours between backup']
-            path_attr = multi_inputbox.multipleinput(msg, title, fieldNames, 'no', True, ['bkp', 1, 1])
+            path_attr = multi_inputbox.multipleinput(msg, title, fieldNames, 'no', True, ['FCS | LMD | OTHER', 1, 1])
             deltabkp = path_attr[2]
             days_del_remote = None
             #clinical_fold_names = None
@@ -267,7 +275,7 @@ class install_labcuro:
             fieldNames  = ['Name of network drive folder where files will be backed up', 
                            'Days to delete local files after transfer',
                            'Days to delete clinical use files from clinical network directory']
-            path_attr = multi_inputbox.multipleinput(msg, title, fieldNames, 'no', True, ['pdfs',1,1])
+            path_attr = multi_inputbox.multipleinput(msg, title, fieldNames, 'no', True, ['PDFS | RAW | OTHER',1,1])
             #clinical_fold_names = path_attr[3].split(',')
             #clinical_fold_names = [x.upper() for x in clinical_fold_names]
             days_del_remote = path_attr[2]
