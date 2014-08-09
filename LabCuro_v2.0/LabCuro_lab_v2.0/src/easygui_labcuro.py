@@ -354,7 +354,18 @@ def buttonbox(msg="",title=" "
         # gcz edit
         #icon_dir = os.path.join(os.path.dirname(__file__),'bin','images')
         #boxRoot.iconbitmap(default=os.path.join(icon_dir,'labcuro_chromatogram.ico'))
-        boxRoot.iconbitmap(default='bin\\images\\labcuro_chromatogram.ico')
+        #boxRoot.iconbitmap(default='bin\\images\\labcuro_chromatogram.ico')
+        
+        #if getattr(sys, 'frozen', False):
+            #print 'script'
+            
+            #os.system("pause")
+         #   boxRoot.iconbitmap(default=str(os.path.join(os.path.dirname(sys.executable), 'bin','images','labcuro_chromatogram.ico')))
+            
+      # elif __file__:
+            #print 'frozen'
+       #     'bin\\images\\labcuro_chromatogram.ico'
+
         #________
         boxRoot.withdraw()
 

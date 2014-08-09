@@ -1,6 +1,7 @@
 import win32api
 import win32net
 import os
+import sys
 import string
 import subprocess
 
@@ -23,7 +24,8 @@ def map_netdrive(netdrive, domain, username, password):
         return networkdrive_letter
     else:
         print 'error'
-        quit()
+        sys.exit(0)
+        #quit()
 
 def mapped_drives(net_drive_paths):
     drives = win32net.NetUseEnum(None,0)

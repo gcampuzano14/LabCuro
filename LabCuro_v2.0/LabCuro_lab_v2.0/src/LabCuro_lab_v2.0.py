@@ -35,8 +35,13 @@ from easygui_labcuro import msgbox, buttonbox, ccbox, choicebox
 # compile executable: python -O C:\Users\germancz\Dropbox\Programming\Python\APPS\pyinstaller\pyinstaller.py --onefile C:\Users\germancz\Dropbox\Programming\Python\APPS\flow_manager_program\FlowIt v2.1.py
 
 def main():
-    print os.path.dirname(__file__)
     
+    #print os.path.dirname(__file__)
+    if getattr(sys, 'frozen', False):
+        print os.path.dirname(os.path.dirname(sys.executable))
+    else:
+        print 'not fs'
+        os.path.dirname(__file__)
     
     place = ''
     inst = install_labcuro.install_labcuro()
@@ -95,7 +100,11 @@ def main():
     
     
     db_clin_name = os.path.join(networkdriveletter, 'TECHNICAL', 'clinical_cases.db')
-    db_tech_name = os.path.join(str(os.path.dirname(__file__)), bindir, str('tech_runs_' + place + '.db'))
+    #db_tech_name = os.path.join(str(os.path.dirname(__file__)), bindir, str('tech_runs_' + place + '.db'))
+    if getattr(sys, 'frozen', False):
+        db_tech_name = os.path.join(str(os.path.dirname(sys.executable)), bindir, str('tech_runs_' + place + '.db'))
+    elif __file__:
+        db_tech_name = os.path.join(str(os.path.dirname(__file__)), bindir, str('tech_runs_' + place + '.db'))
     #db_clin_name = 'clinical_cases_' + place + '.db' 
     #db_tech_name = 'tech_runs_' + place + '.db'
 
@@ -138,13 +147,19 @@ def main():
         query = '''SELECT * FROM case_log WHERE date_sent_to_pathology BETWEEN "2013-07-06 00:00:00" AND "''' + nowtime + '''" '''
         #query = '''SELECT * FROM case_log WHERE date_sent_to_pathology BETWEEN "2013-07-06 00:00:00" AND "2014-09-30 00:00:00" '''
         data = database_handler.query_data(db_remote, query)
-        out_csv = os.path.join(os.path.dirname(__file__),bindir,'output.csv')
+        #out_csv = os.path.join(os.path.dirname(__file__),bindir,'output.csv')
+        if getattr(sys, 'frozen', False):
+            out_csv = os.path.join(os.path.dirname(sys.executable),bindir,'output.csv')
+        elif __file__:
+            out_csv = os.path.join(os.path.dirname(__file__),bindir,'output.csv')
+            
         os.open(out_csv, os.O_RDWR | os.O_CREAT)
         with open(out_csv, 'wb') as csv_out:
             writer = csv.writer(csv_out)
             writer.writerow(['index', 'lab_name', 'lab_service', 'instrument_id', 'accession_number',  'patient_name', 'matrix', 'panel', 'lab_tech', 'date_sent_to_pathology', 'training_pathologist', 'pathologist', 'date_reviewed_pathologist'])
             writer.writerows(data)
-        os.startfile(out_csv)  
+        #os.startfile(out_csv)  
+        os.system('start ' + out_csv)
         os.system(r"NET USE %s: /DELETE /YES" % networkdriveletter[0])  
         sys.exit(0)
         #quit()    
@@ -188,6 +203,7 @@ def main():
     print 'FILE TRANSFER COMPLETE'
     print 'CLICK "ENTER" KEY TO EXIT'
     os.system("pause")
+    
     
     #DISCONNECT TO NETWORK DRIVE WHEN DONE
     os.system(r"NET USE %s: /DELETE /YES" % networkdriveletter[0])
@@ -270,7 +286,13 @@ class file_process:
                             elif os.path.isfile(item):
                                 os.remove(item) 
                         ## _______________________ # CHECKED AND WORKS JULY 1 2014
-                    temp_path = os.path.join(os.path.dirname(__file__), str('temp'+place))  
+                    #temp_path = os.path.join(os.path.dirname(__file__), str('temp'+place))
+                    if getattr(sys, 'frozen', False):
+                        temp_path = os.path.join(os.path.dirname(sys.executable), str('temp'+place))  
+                        
+                    elif __file__:    
+                        temp_path = os.path.join(os.path.dirname(__file__), str('temp'+place))
+                        
                     files_to_log = {}     
                     if clinical_paths[clinical_path]['to_merge']: 
                         merge_regex = clinical_paths[clinical_path]['to_merge']
@@ -283,8 +305,9 @@ class file_process:
                         for temp_file in os.listdir(temp_path):
                             source = os.path.join(temp_path, temp_file)
                             destination = os.path.join(true_clinical_path, temp_file.upper())
-                            shutil.move(source, destination)  
-                            os.startfile(destination)     
+                            shutil.move(source, destination)
+                            os.system("start " + destination)  
+                            #os.startfile(destination)     
                             if clinical_paths[clinical_path]['add_to_clin_database']:
                                 file_regex_pattern = clinical_paths[clinical_path]['find_folder']
                                 matches = re.match(file_regex_pattern, temp_file, re.IGNORECASE)
@@ -315,8 +338,8 @@ class file_process:
                                         os.rename(os.path.join(true_clinical_path, file_unsorted), os.path.join(true_clinical_path, processed_file))
                                     else:
                                         os.rename(os.path.join(true_clinical_path, file_unsorted), os.path.join(true_clinical_path, processed_file))
-                                    os.startfile(os.path.join(true_clinical_path, processed_file))
-                                 
+                                    #os.startfile(os.path.join(true_clinical_path, processed_file))
+                                    os.system("start " + os.path.join(true_clinical_path, processed_file))
                     if clinical_paths[clinical_path]['add_to_clin_database']:             
                         for filename in files_to_log:
                             accession_number = files_to_log[filename]['accession_number']
@@ -331,7 +354,8 @@ class file_process:
                                      'patient_name':str(patient_name), 'matrix':str(matrix),'panel':str(panel), 'lab_tech':str(username), 'date_sent_to_pathology' : str(now_str)}
                             #print dicts
                             database_handler.insert_data(insert_vals, dicts, db_clin_name)
-                        os.startfile(true_clinical_path)
+                        #os.startfile(true_clinical_path)
+                        os.system('start '  + true_clinical_path)
                     
             deleted_items_local[path['name_backup_path']] = []
             for file_name  in os.listdir(local_temp_destination):
@@ -407,13 +431,15 @@ class file_process:
             choice = ccbox(msg, title)
             if choice == 1:
                 useful_fx.openFolder(source)
-                os.startfile(os.path.dirname(file_origin))
+                #os.startfile(os.path.dirname(file_origin))
+                os.system('start ' + os.path.dirname(file_origin))
                 self.file_cycle(networkdriveletter, path, source, local_temp_destination, remote_perm_destination, clinical_paths, delta_backup)
             else:
                 msgbox("This application will end but you must fix the files and re-run the program. These are clinical samples.")
                 return None
                 time.sleep(0.3)
-                os.startfile(os.path.dirname(file_origin))
+                #os.startfile(os.path.dirname(file_origin))
+                os.system('start ' + os.path.dirname(file_origin))
         return {'no_match' : no_match, 'yes_match' : yes_match, 'bkp_file' : bkp_file, 'count' : cnt}
          
     def match(self, networkdriveletter, file_name, file_origin, clinical_paths):
