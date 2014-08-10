@@ -1,8 +1,0 @@
-import  prin_stuff  
-
-text_mine = "hello UM"
-
-classcall = prin_stuff.now()
-
-print classcall.print_this(text_mine)
-
