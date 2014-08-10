@@ -23,8 +23,9 @@ def map_netdrive(netdrive, domain, username, password):
         networkdrive_letter = availletter[0]
         return networkdrive_letter
     else:
-        print 'error'
-        sys.exit(0)
+        print 'CONNECTION ERROR'
+        return 'fail'
+        #sys.exit(0)
         #quit()
 
 def mapped_drives(net_drive_paths):

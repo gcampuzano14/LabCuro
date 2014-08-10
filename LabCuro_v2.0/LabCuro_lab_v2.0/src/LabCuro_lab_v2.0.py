@@ -38,9 +38,11 @@ def main():
     
     #print os.path.dirname(__file__)
     if getattr(sys, 'frozen', False):
-        print os.path.dirname(os.path.dirname(sys.executable))
+        print '____________________LABCURO LABORATORY SUITE V2.0____________________'
+        #print os.path.dirname(os.path.dirname(sys.executable))  
     else:
-        print 'not fs'
+        #print 'not fs'
+        print '____________________LABCURO LABORATORY SUITE V2.0____________________TESTING'
         os.path.dirname(__file__)
     
     place = ''
@@ -87,13 +89,19 @@ def main():
     #vals = ['gcampuzanozuluaga', 'Gcz2348.']
     netdrive_access = multi_inputbox.multipleinput(msg, title, fieldNames, True, False, fieldValues = vals, verification = False)
     
+        
     ## CONNECT TO NETWORK DRIVE
     netdrive = local_settings['lab_attributes']['service']['directories']['destination_server']['serv_path']
     domain = local_settings['lab_attributes']['service']['directories']['destination_server']['domain']
     username = netdrive_access[0]
     password = netdrive_access[1]
-    map_network_drive.mapped_drives(netdrive)
+    map_network_drive.mapped_drives([netdrive])
     networkdriveletter = map_network_drive.map_netdrive(netdrive, domain, username, password) + ':'
+
+    if networkdriveletter == 'fail:':
+        msgbox('INVALID ACCESS VALUES OR MULTIPLE CONNECTION SAME SERVER\n\nTRY AGAIN')
+        main() 
+    
     #print netdrive
     map_network_drive.mapped_drives(netdrive)
     lab_service = local_settings['lab_attributes']['service']['test_category']
@@ -153,13 +161,16 @@ def main():
         elif __file__:
             out_csv = os.path.join(os.path.dirname(__file__),bindir,'output.csv')
             
-        os.open(out_csv, os.O_RDWR | os.O_CREAT)
+        t=os.open(out_csv, os.O_RDWR | os.O_CREAT)
+        os.close(t)
         with open(out_csv, 'wb') as csv_out:
             writer = csv.writer(csv_out)
             writer.writerow(['index', 'lab_name', 'lab_service', 'instrument_id', 'accession_number',  'patient_name', 'matrix', 'panel', 'lab_tech', 'date_sent_to_pathology', 'training_pathologist', 'pathologist', 'date_reviewed_pathologist'])
             writer.writerows(data)
+        
         #os.startfile(out_csv)  
-        os.system('start ' + out_csv)
+       # print'start ' +  '"" "' + out_csv + '"'
+        os.system('start ' +  '"" "' + out_csv + '"')
         os.system(r"NET USE %s: /DELETE /YES" % networkdriveletter[0])  
         sys.exit(0)
         #quit()    
@@ -195,13 +206,15 @@ def main():
         # open a public URL, in this case, the webbrowser docs
         url = "https://github.com/gcampuzano14/LabCuro/tree/master/LabCuro_v2.0/manuals"
         webbrowser.open(url,new=new)
+        sys.exit(0)
     
     #RUN MAIN FILE PROCESS FUNCTION
     fp = file_process()
     fp.path_cycle(local_settings, lab_service, username, networkdriveletter, db_clin_name, db_tech_name, place)
     
-    print 'FILE TRANSFER COMPLETE'
-    print 'CLICK "ENTER" KEY TO EXIT'
+    print '\n\n\n____________________LABCURO LABORATORY SUITE V2.0____________________'
+    print '\n\n____________________FILE TRANSFER COMPLETE____________________'
+    print '____________________CLICK "ENTER" KEY TO EXIT____________________'
     os.system("pause")
     
     
@@ -221,6 +234,7 @@ class file_process:
     #print now_number, now, now_str
 
     def path_cycle(self, local_settings, lab_service, username, networkdriveletter,   db_clin_name, db_tech_name, place=None):
+                
         paths = local_settings['lab_attributes']['service']['directories']['local_paths'] 
         lab_name = local_settings['lab_name']
         deleted_items_local = {}
@@ -237,6 +251,7 @@ class file_process:
             source = path['local_origin_path']
             local_temp_destination = os.path.join(path['local_sent_path'], path['name_backup_path'])
             remote_perm_destination = os.path.join(networkdriveletter, 'LABS', path['netdrive_backup_path'], str(year)) #SEPARATE BACKUP BY YEAR
+            #new backup dir per year
             if not os.path.isdir(remote_perm_destination):
                 os.mkdir(remote_perm_destination)
             
@@ -255,18 +270,27 @@ class file_process:
             #clinical paths
             clinical_paths = path['netdrive_clinical_paths']
             
-            source_results = self.file_cycle(networkdriveletter, path, source, local_temp_destination, remote_perm_destination, clinical_paths, delta_backup=None)
+            source_results = self.file_cycle(networkdriveletter, path, source, local_temp_destination, remote_perm_destination, clinical_paths, delta_backup=None,
+                                             cnt = 0, yes_match = [], bkp_file = [])
             #print clinical_paths
-            if source_results:
-                clinical_cases_sent[path['name_backup_path']] = source_results['yes_match']
-                clin_cnt = clin_cnt + len(source_results['yes_match'])
-                clinical_cases_failtosend[path['name_backup_path']] = source_results['no_match']
-                fail_cnt = fail_cnt + len(source_results['no_match'])
-                backed_up_items[path['name_backup_path']] = source_results['bkp_file']                 
-                bkp_cnt = bkp_cnt + source_results['count']
-            
-            if path['clinical_file'] == 'CLINICAL':
 
+            clinical_cases_sent[path['name_backup_path']] = source_results['yes_match']
+            clin_cnt = clin_cnt + len(source_results['yes_match'])
+            clinical_cases_failtosend[path['name_backup_path']] = source_results['no_match']
+            fail_cnt = fail_cnt + len(source_results['no_match'])
+            backed_up_items[path['name_backup_path']] = source_results['bkp_file']                 
+            bkp_cnt = bkp_cnt + source_results['count']
+            
+            
+#            if source_results:
+ #               clinical_cases_sent[path['name_backup_path']] = source_results['yes_match']
+  #              clin_cnt = clin_cnt + len(source_results['yes_match'])
+   #             clinical_cases_failtosend[path['name_backup_path']] = source_results['no_match']
+    #            fail_cnt = fail_cnt + len(source_results['no_match'])
+     #           backed_up_items[path['name_backup_path']] = source_results['bkp_file']                 
+      #          bkp_cnt = bkp_cnt + source_results['count']
+
+            if path['clinical_file'] == 'CLINICAL':
                 removed_done = [] 
                 for clinical_path in clinical_paths:
                     true_clinical_path = os.path.join(networkdriveletter, 'LABS', clinical_path)
@@ -306,7 +330,7 @@ class file_process:
                             source = os.path.join(temp_path, temp_file)
                             destination = os.path.join(true_clinical_path, temp_file.upper())
                             shutil.move(source, destination)
-                            os.system("start " + destination)  
+                            os.system('start ' +  '"" "' + destination + '"' )  
                             #os.startfile(destination)     
                             if clinical_paths[clinical_path]['add_to_clin_database']:
                                 file_regex_pattern = clinical_paths[clinical_path]['find_folder']
@@ -339,7 +363,7 @@ class file_process:
                                     else:
                                         os.rename(os.path.join(true_clinical_path, file_unsorted), os.path.join(true_clinical_path, processed_file))
                                     #os.startfile(os.path.join(true_clinical_path, processed_file))
-                                    os.system("start " + os.path.join(true_clinical_path, processed_file))
+                                    os.system('start ' +  '"" "' + os.path.join(true_clinical_path, processed_file) + '"')
                     if clinical_paths[clinical_path]['add_to_clin_database']:             
                         for filename in files_to_log:
                             accession_number = files_to_log[filename]['accession_number']
@@ -355,7 +379,7 @@ class file_process:
                             #print dicts
                             database_handler.insert_data(insert_vals, dicts, db_clin_name)
                         #os.startfile(true_clinical_path)
-                        os.system('start '  + true_clinical_path)
+                        os.system('start '  +  '"" "' + true_clinical_path + '"')
                     
             deleted_items_local[path['name_backup_path']] = []
             for file_name  in os.listdir(local_temp_destination):
@@ -387,13 +411,20 @@ class file_process:
         
         database_handler.insert_data(insert_vals, dicts, db_tech_name)
     
-    def file_cycle(self, networkdriveletter, path, source, local_temp_destination, remote_perm_destination, clinical_paths, delta_backup):
-        cnt = 0
+    def file_cycle(self, networkdriveletter, path, source, local_temp_destination, remote_perm_destination, clinical_paths, delta_backup, 
+                   cnt = 0, yes_match = [], bkp_file = [], fail = 0):
+        #cnt = 0
         no_match = []
-        yes_match = []
-        bkp_file = []
+        #yes_match = []
+        #bkp_file = []
         case_atributtes = True
+        
+        if fail != 1:
+            print '\n_____________   TRANSFERING FILES & DIRECTORIES  _____________'
+            print '_____________   FILE SOURCE: ' + str(source) + '   _____________\n\n'
+        fail = 0
         for file_name in os.listdir(source):
+            
             file_name = file_name.upper()
             file_origin = os.path.join(source, file_name)
             file_local_destination = os.path.join(local_temp_destination, file_name)
@@ -402,9 +433,9 @@ class file_process:
             if path['clinical_file'] == 'CLINICAL':
                 case_atributtes = self.match(networkdriveletter, file_name_fixspaces, file_origin, clinical_paths)
                 if case_atributtes == True:
-                    yes_match.append(file_origin)                
+                    yes_match.append(file_name)                
                 else:
-                    no_match.append(file_origin)
+                    no_match.append(file_name)
             #backup if pattern is correct
             if case_atributtes:
                 file_creation = os.stat(file_origin).st_mtime
@@ -420,26 +451,31 @@ class file_process:
                     self.copydirsfiles(file_origin, file_local_destination, file_remote_destination, now)
                 cnt += 1
                 bkp_file.append(file_name)
-                ## _________________________
-                
+                ## _________________________  
         if len(no_match) > 0:
+            useful_fx.openFolder(source)
             no_match_str = ""
             for e in no_match:
                 no_match_str = "\n".join([no_match_str,e])
             msg = ('Clinical case name does not have an acceptable pattern.\nIncorrect case:' + no_match_str )
             title = "LabCuro v2.0 - Laboratory Suite - Setup"
             choice = ccbox(msg, title)
+            
             if choice == 1:
-                useful_fx.openFolder(source)
+                #useful_fx.openFolder(source)
                 #os.startfile(os.path.dirname(file_origin))
-                os.system('start ' + os.path.dirname(file_origin))
-                self.file_cycle(networkdriveletter, path, source, local_temp_destination, remote_perm_destination, clinical_paths, delta_backup)
+                #os.system('start ' +  '"" "' + os.path.dirname(file_origin) + '"')
+                fail = 1
+                return self.file_cycle(networkdriveletter, path, source, local_temp_destination, remote_perm_destination, clinical_paths, delta_backup, 
+                                       cnt, yes_match, bkp_file, fail)
             else:
-                msgbox("This application will end but you must fix the files and re-run the program. These are clinical samples.")
-                return None
+                msgbox("This application will end but you must fix the files and re-run the program.\nThese are clinical samples and require timely transfer.")
+                #return None
+                return {'no_match' : no_match, 'yes_match' : yes_match, 'bkp_file' : bkp_file, 'count' : cnt}
                 time.sleep(0.3)
+                #useful_fx.openFolder(source)
                 #os.startfile(os.path.dirname(file_origin))
-                os.system('start ' + os.path.dirname(file_origin))
+                #os.system('start ' +  '"" "' + os.path.dirname(file_origin) + '"')
         return {'no_match' : no_match, 'yes_match' : yes_match, 'bkp_file' : bkp_file, 'count' : cnt}
          
     def match(self, networkdriveletter, file_name, file_origin, clinical_paths):
@@ -481,7 +517,9 @@ class file_process:
         return False
 
     def copydirsfiles(self, file_origin, file_local_destination, file_remote_destination, now):
-        print file_origin
+        
+        ti = re.match(r'.+\\(.+)', file_origin)
+        print ti.group(1)
         chksum = useful_fx.checksums()
         year = now.year
         month = now.month
