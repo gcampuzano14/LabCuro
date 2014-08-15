@@ -137,7 +137,7 @@ class Ui_MainWindow(object):
             self.tab_site = QtGui.QWidget(self)
             #print self.tab_site
 
-            image_dir = os.path.join(os.path.dirname(__file__),'bin','images')
+            #image_dir = os.path.join(os.path.dirname(__file__),'bin','images')
             #image_dir = os.path.join(os.path.dirname(__file__),'bin','images')
             if service == 'FLOW': 
                 logo = QtGui.QPixmap(':/bin/images/flow.png')

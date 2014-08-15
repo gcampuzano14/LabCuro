@@ -877,7 +877,7 @@ startupGui: None -> <PyModule 'startupGui' D:\Dropbox\Programming\Python\PY_APPS
 contextlib: None -> <PyModule 'contextlib' C:\Anaconda\lib\contextlib.pyc imports=[('sys', 0, 0, -1), ('functools', 0, 0, -1), ('functools.wraps', 0, 0, -1), ('warnings', 0, 0, -1), ('warnings.warn', 0, 0, -1)] binaries=[] datas=[]>
 json: None -> <PkgModule 'json' C:\Anaconda\lib\json\__init__.pyc imports=[('decoder', 0, 0, 1), ('decoder.JSONDecoder', 0, 0, 1), ('encoder', 0, 0, 1), ('encoder.JSONEncoder', 0, 0, 1)] binaries=[] datas=[]>
 database_handler: None -> <PyModule 'database_handler' D:\Dropbox\Programming\Python\PY_APPS_COLLABORATIVE\LabCuro\LabCuro_v2.0\LabCuro_clinical_v2.0\src\database_handler.pyc imports=[('sqlite3', 0, 0, -1)] binaries=[] datas=[]>
-map_network_drive: None -> <PyModule 'map_network_drive' D:\Dropbox\Programming\Python\PY_APPS_COLLABORATIVE\LabCuro\LabCuro_v2.0\LabCuro_clinical_v2.0\src\map_network_drive.pyc imports=[('win32api', 0, 0, -1), ('win32net', 0, 0, -1), ('os', 0, 0, -1), ('string', 0, 0, -1), ('subprocess', 0, 0, -1)] binaries=[] datas=[]>
+map_network_drive: None -> <PyModule 'map_network_drive' D:\Dropbox\Programming\Python\PY_APPS_COLLABORATIVE\LabCuro\LabCuro_v2.0\LabCuro_clinical_v2.0\src\map_network_drive.pyc imports=[('win32api', 0, 0, -1), ('win32net', 0, 0, -1), ('os', 0, 0, -1), ('string', 0, 0, -1), ('subprocess', 0, 0, -1), ('re', 0, 0, -1), ('socket', 0, 0, -1)] binaries=[] datas=[]>
 images_qr: None -> <PyModule 'images_qr' D:\Dropbox\Programming\Python\PY_APPS_COLLABORATIVE\LabCuro\LabCuro_v2.0\LabCuro_clinical_v2.0\src\images_qr.pyc imports=[('PySide', 0, 0, -1), ('PySide.QtCore', 0, 0, -1)] binaries=[] datas=[]>
 posix: None -> None
   DEL posix

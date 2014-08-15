@@ -58,9 +58,12 @@ class MainWindow(QMainWindow, labcuroMainWindow.Ui_MainWindow, StartupGui):
     def startdialog(self):
         global netdrives
         global db_master
-        ## COMNFIG DB PATH
+        ## CONFIG DB PATH
         db_master = os.path.join(os.path.dirname(__file__),'bin','master_config.sqlite')
-        
+        if getattr(sys, 'frozen', False):
+            db_master = os.path.join(str(os.path.dirname(sys.executable)),'bin','master_config.sqlite')
+        else:
+            db_master = os.path.join(os.path.dirname(__file__),'bin','master_config.sqlite')
         ## GET POWER_USER LIST
         query = '''SELECT user FROM master_users'''
         poweruser_list = database_handler.query_data(db_master, query)
@@ -70,6 +73,9 @@ class MainWindow(QMainWindow, labcuroMainWindow.Ui_MainWindow, StartupGui):
         shares = database_handler.query_data(db_master, query)
         query = '''SELECT lab_id FROM server_list'''
         ids = database_handler.query_data(db_master, query)
+        
+        #shares = map_network_drive.get_ips(shares)
+
         dict_shares = dict(zip(ids, shares))
         print dict_shares
         map_network_drive.mapped_drives(shares)
