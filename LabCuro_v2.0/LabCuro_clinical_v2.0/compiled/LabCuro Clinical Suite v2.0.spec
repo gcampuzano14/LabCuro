@@ -1,6 +1,6 @@
 # -*- mode: python -*-
-a = Analysis(['D:\\Dropbox\\Programming\\Python\\PY_APPS_COLLABORATIVE\\LabCuro\\LabCuro_v2.0\\LabCuro_clinical_v2.0\\src\\labcuro_clinical_v2.pyw'],
-             pathex=['D:\\Dropbox\\Programming\\Python\\PY_APPS_COLLABORATIVE\\LabCuro\\LabCuro_v2.0\\LabCuro_clinical_v2.0\\compiled'],
+a = Analysis(['C:\\Documents and Settings\\gcampuzanozuluaga\\My Documents\\Dropbox\\PC_SHARE\\LabCuro_clinical_v2.0\\src\\labcuro_clinical_v2.pyw'],
+             pathex=['C:\\Documents and Settings\\gcampuzanozuluaga\\My Documents\\Dropbox\\PC_SHARE\\LabCuro_clinical_v2.0\\compiled'],
              hiddenimports=[],
              hookspath=None)
 pyz = PYZ(a.pure)
@@ -11,9 +11,9 @@ exe = EXE(pyz,
           debug=False,
           strip=None,
           upx=True,
-          console=False , icon='D:\\Dropbox\\Programming\\Python\\PY_APPS_COLLABORATIVE\\LabCuro\\LabCuro_v2.0\\LabCuro_clinical_v2.0\\src\\bin\\images\\labcuro_icon.ico')
+          console=False , icon='C:\\Documents and Settings\\gcampuzanozuluaga\\My Documents\\Dropbox\\PC_SHARE\\LabCuro_clinical_v2.0\\src\\bin\\images\\labcuro_icon.ico')
 coll = COLLECT(exe,
-               Tree('D:\\Dropbox\\Programming\\Python\\PY_APPS_COLLABORATIVE\\LabCuro\\LabCuro_v2.0\\LabCuro_clinical_v2.0\\src\\bin\\images'),
+               Tree('C:\\Documents and Settings\\gcampuzanozuluaga\\My Documents\\Dropbox\\PC_SHARE\\LabCuro_clinical_v2.0\\src\\bin\\images'),
                a.binaries,
                a.zipfiles,
                a.datas,

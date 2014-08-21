@@ -1,0 +1,5 @@
+C:\Documents and Settings\gcampuzanozuluaga\My Documents\Dropbox\PC_SHARE\pyinstaller-2.0
+
+python "C:\Documents and Settings\gcampuzanozuluaga\My Documents\Dropbox\PC_SHARE\pyinstaller-2.0\utils\Makespec.py" --noconsole --icon="C:\Documents and Settings\gcampuzanozuluaga\My Documents\Dropbox\PC_SHARE\LabCuro_clinical_v2.0\src\bin\images\labcuro_icon.ico" --name="LabCuro Clinical Suite v2.0" "C:\Documents and Settings\gcampuzanozuluaga\My Documents\Dropbox\PC_SHARE\LabCuro_clinical_v2.0\src\labcuro_clinical_v2.pyw"
+
+"C:\Documents and Settings\gcampuzanozuluaga\My Documents\Dropbox\PC_SHARE\pyinstaller-2.0\utils\Build.py" "LabCuro Clinical Suite v2.0.spec"
