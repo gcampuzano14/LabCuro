@@ -2,8 +2,7 @@
 #-------------------------------------------------------------------------------
 # Name:         LabCuro Laboratory Suite
 # Created:      2014
-# Version:      Version: 2.0
-# Copyright:    (c) German Campuzano Zuluaga gcampuzanozuluaga@med.miami.edu
+# Copyright:    (c) German Campuzano Zuluaga 
 #-------------------------------------------------------------------------------
 import os
 import time
